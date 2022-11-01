@@ -11,8 +11,10 @@ class BookListCreateAPIView(generics.ListCreateAPIView):
 class BookDetailedAPIView(generics.RetrieveAPIView):
     queryset = Bookshelf.objects.all()
     serializer_class = BookSerializer
-
+    lookup_field = 'name'
+    
 class BookEditAPIView(generics.UpdateAPIView):
     queryset = Bookshelf.objects.all()
     serializer_class = BookSerializer
+    
 
